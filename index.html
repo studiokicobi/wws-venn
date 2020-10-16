@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Venn diagram</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="main.css">
+
+</head>
+  <body>
+
+    <div class="venn-wrapper" data-aos="venn-wrapper">
+        <div class="venn">
+
+            <!-- The discs & texts-->
+            <div class="venn__disc venn__disc--top" 
+                data-aos="fade-down" 
+                data-aos-delay="150" 
+                data-aos-duration="1500"
+                data-aos-easing="ease-in-out" 
+                data-aos-offset="270"
+                >
+                <img src="svg/you-and-your-goals.svg" 
+                    data-aos="fade" 
+                    data-aos-delay="1000" 
+                    data-aos-duration="1250"
+                    data-aos-easing="ease-in-out"
+                    alt=""
+                   >
+            </div>
+    
+            <div class="venn__disc venn__disc--left" 
+                data-aos="fade-up-right" 
+                data-aos-delay="150" 
+                data-aos-duration="1500"
+                data-aos-easing="ease-in-out"
+                >
+                <img src="svg/the-system.svg" 
+                    data-aos="fade" 
+                    data-aos-delay="1000"
+                    data-aos-duration="1250" 
+                    data-aos-easing="ease-in-out"
+                    alt=""
+                    >
+            </div>
+    
+            <div class="venn__disc venn__disc--right" 
+                data-aos="fade-up-left" 
+                data-aos-delay="150" 
+                data-aos-duration="1500"
+                data-aos-easing="ease-in-out"
+                >
+                <img src="svg/the-support.svg" 
+                    data-aos="fade" 
+                    data-aos-delay="1000"
+                    data-aos-duration="1250" 
+                    data-aos-easing="ease-in-out"
+                    alt=""
+                    >
+            </div>
+    
+            <!-- The texts -->
+            <div class="venn__text venn__text--top">
+            </div>
+
+            <!-- The mark -->
+            <img src="svg/venn-mark.svg" 
+                class="venn__mark" 
+                data-aos="fade" 
+                data-aos-delay="1250" 
+                data-aos-duration="1000" 
+                alt=""
+                >
+
+        </div><!-- venn -->
+    </div><!-- venn-wrapper -->
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        // Global settings:
+        disable: 'mobile', // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        // once: false, // whether animation should happen only once - while scrolling down
+        // mirror: false, // whether elements should animate out while scrolling past them
+    });
+    </script>
+
+  </body>
+</html>

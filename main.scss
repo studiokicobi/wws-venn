@@ -1,0 +1,121 @@
+/* Basics
+   ------------------------------ */
+
+html {
+  min-height: 200vh;
+}
+
+body {
+  margin-top: 110vh;
+}
+
+/* Animation variables
+   ------------------------------ */
+$disc-size: 270px;
+$disc-horiz-center: 107px;
+$disc-bg: #ffeded;
+
+/* Animation parts
+   ------------------------------ */
+.venn-wrapper {
+  width: 600px;
+  height: 560px;
+  margin: auto;
+  padding: 0;
+  background-color: #fffbf5;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.venn {
+  position: relative;
+  width: 484px;
+  height: 449px;
+
+  // Make the discs
+  &__disc {
+    height: $disc-size;
+    width: $disc-size;
+    border-radius: $disc-size;
+    mix-blend-mode: multiply;
+    background-color: $disc-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--top {
+      position: absolute;
+      top: 0;
+      left: $disc-horiz-center;
+    }
+
+    &--left {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    &--right {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  // The texts
+  &__text {
+    height: $disc-size;
+    width: $disc-size;
+    border-radius: $disc-size;
+    position: relative;
+
+    img {
+      display: block;
+    }
+
+    &--top {
+      position: absolute;
+      top: 0;
+      left: $disc-horiz-center;
+    }
+
+    &--left {
+    }
+
+    &--right {
+    }
+  }
+
+  // The mark
+  &__mark {
+    position: absolute;
+    top: 228px;
+    left: 187px;
+    opacity: 0;
+  }
+}
+
+/* Custom animations
+   ------------------------------ */
+
+// Venn wrapper opacity
+[data-aos="venn-wrapper"] {
+  opacity: 0;
+  transition-property: transform, opacity;
+
+  &.aos-animate {
+    opacity: 1;
+  }
+}
+
+// Mark opacity
+[data-aos="venn-mark"] {
+  opacity: 0;
+  transition-property: transform, opacity;
+
+  &.aos-animate {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,96 @@
+/* Basics
+   ------------------------------ */
+html {
+  min-height: 200vh;
+}
+
+body {
+  margin-top: 110vh;
+}
+
+/* Animation variables
+   ------------------------------ */
+/* Animation parts
+   ------------------------------ */
+.venn-wrapper {
+  width: 600px;
+  height: 560px;
+  margin: auto;
+  padding: 0;
+  background-color: #fffbf5;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.venn {
+  position: relative;
+  width: 484px;
+  height: 449px;
+}
+.venn__disc {
+  height: 270px;
+  width: 270px;
+  border-radius: 270px;
+  mix-blend-mode: multiply;
+  background-color: #ffeded;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.venn__disc--top {
+  position: absolute;
+  top: 0;
+  left: 107px;
+}
+.venn__disc--left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.venn__disc--right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.venn__text {
+  height: 270px;
+  width: 270px;
+  border-radius: 270px;
+  position: relative;
+}
+.venn__text img {
+  display: block;
+}
+.venn__text--top {
+  position: absolute;
+  top: 0;
+  left: 107px;
+}
+.venn__mark {
+  position: absolute;
+  top: 228px;
+  left: 187px;
+  opacity: 0;
+}
+
+/* Custom animations
+   ------------------------------ */
+[data-aos=venn-wrapper] {
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+[data-aos=venn-wrapper].aos-animate {
+  opacity: 1;
+}
+
+[data-aos=venn-mark] {
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+[data-aos=venn-mark].aos-animate {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=main.css.map */
