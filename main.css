@@ -1,11 +1,10 @@
 /* Basics
    ------------------------------ */
-html {
-  min-height: 200vh;
-}
-
 body {
-  margin-top: 110vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Animation variables
