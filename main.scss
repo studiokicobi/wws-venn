@@ -8,6 +8,12 @@ body {
   align-items: center;
 }
 
+/* Check for reduce motion setting
+   ------------------------------ */
+@media screen and (prefers-reduced-motion: no-preference) {
+  @import "https://unpkg.com/aos@next/dist/aos.css";
+}
+
 /* Animation variables
    ------------------------------ */
 $disc-size: 270px;
@@ -93,28 +99,35 @@ $disc-bg: #ffeded;
     top: 228px;
     left: 187px;
     opacity: 0;
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      opacity: 1;
+    }
   }
 }
 
 /* Custom animations
+   – Used if the user has *not* selected reduce motion.
    ------------------------------ */
 
-// Venn wrapper opacity
-[data-aos="venn-wrapper"] {
-  opacity: 0;
-  transition-property: transform, opacity;
+@media screen and (prefers-reduced-motion: no-preference) {
+  // Venn wrapper opacity
+  [data-aos="venn-wrapper"] {
+    opacity: 0;
+    transition-property: transform, opacity;
 
-  &.aos-animate {
-    opacity: 1;
+    &.aos-animate {
+      opacity: 1;
+    }
   }
-}
 
-// Mark opacity
-[data-aos="venn-mark"] {
-  opacity: 0;
-  transition-property: transform, opacity;
+  // Mark opacity
+  [data-aos="venn-mark"] {
+    opacity: 0;
+    transition-property: transform, opacity;
 
-  &.aos-animate {
-    opacity: 1;
+    &.aos-animate {
+      opacity: 1;
+    }
   }
 }

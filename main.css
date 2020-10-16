@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Basics
    ------------------------------ */
 body {
@@ -7,6 +8,11 @@ body {
   align-items: center;
 }
 
+/* Check for reduce motion setting
+   ------------------------------ */
+@media screen and (prefers-reduced-motion: no-preference) {
+  @import "https://unpkg.com/aos@next/dist/aos.css";
+}
 /* Animation variables
    ------------------------------ */
 /* Animation parts
@@ -73,23 +79,31 @@ body {
   left: 187px;
   opacity: 0;
 }
+@media screen and (prefers-reduced-motion: reduce) {
+  .venn__mark {
+    opacity: 1;
+  }
+}
 
 /* Custom animations
+   – Used if the user has *not* selected reduce motion.
    ------------------------------ */
-[data-aos=venn-wrapper] {
-  opacity: 0;
-  transition-property: transform, opacity;
-}
-[data-aos=venn-wrapper].aos-animate {
-  opacity: 1;
-}
+@media screen and (prefers-reduced-motion: no-preference) {
+  [data-aos=venn-wrapper] {
+    opacity: 0;
+    transition-property: transform, opacity;
+  }
+  [data-aos=venn-wrapper].aos-animate {
+    opacity: 1;
+  }
 
-[data-aos=venn-mark] {
-  opacity: 0;
-  transition-property: transform, opacity;
-}
-[data-aos=venn-mark].aos-animate {
-  opacity: 1;
+  [data-aos=venn-mark] {
+    opacity: 0;
+    transition-property: transform, opacity;
+  }
+  [data-aos=venn-mark].aos-animate {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

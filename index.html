@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <title>Venn diagram</title>
 
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+
     <link rel="stylesheet" href="main.css">
 
 </head>
@@ -78,13 +79,28 @@
 
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-    AOS.init({
-        // Global settings:
-        disable: 'mobile', // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-        // once: false, // whether animation should happen only once - while scrolling down
-        // mirror: false, // whether elements should animate out while scrolling past them
-    });
+<script>
+
+    let motionQuery = matchMedia('(prefers-reduced-motion)');
+
+        const handleReduceMotionChanged = () => {
+            if (motionQuery.matches) //reduced behaviour;
+} else {
+
+        AOS.init({
+                        // Global settings:
+                        disable: 'mobile', // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+                        // once: false, // whether animation should happen only once - while scrolling down
+                        // mirror: false, // whether elements should animate out while scrolling past them
+                    });
+
+                    
+}
+
+        motionQuery.addListener(handleReduceMotionChanged);
+        handleReduceMotionChanged()
+
+
     </script>
 
   </body>
