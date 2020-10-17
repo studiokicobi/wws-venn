@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* Basics
    ------------------------------ */
+@import "https://unpkg.com/aos@next/dist/aos.css" screen and (prefers-reduced-motion: no-preference);
 body {
   height: 100vh;
   display: flex;
@@ -10,9 +11,6 @@ body {
 
 /* Check for reduce motion setting
    ------------------------------ */
-@media screen and (prefers-reduced-motion: no-preference) {
-  @import "https://unpkg.com/aos@next/dist/aos.css";
-}
 /* Animation variables
    ------------------------------ */
 /* Animation parts
@@ -77,11 +75,11 @@ body {
   position: absolute;
   top: 228px;
   left: 187px;
-  opacity: 0;
+  opacity: 1;
 }
-@media screen and (prefers-reduced-motion: reduce) {
+@media screen and (prefers-reduced-motion: no-preference) {
   .venn__mark {
-    opacity: 1;
+    opacity: 0;
   }
 }
 
